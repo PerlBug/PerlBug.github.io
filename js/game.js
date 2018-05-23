@@ -42,7 +42,7 @@ var pillar;
 
 function create() 
 {
-
+     game.input.addPointer();
 
 
 	
@@ -99,7 +99,10 @@ function update()
 	//game.time.events.loop(Phaser.Timer.SECOND * 10, generatePillars, this);
 
 	spaceKey.onUp.add(jump);
-
+    
+    if(game.input.pointer1.isDown){
+        jump();
+    }
 	
 	ball.angle += 20;
 
